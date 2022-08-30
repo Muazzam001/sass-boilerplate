@@ -1,0 +1,153 @@
+@use "./../Base/Variables" as varBase;
+@use "./../Abstract" as varMix;
+
+%bgTransparent {
+  background-color: varBase.$colorTransparent;
+}
+
+%lightCard {
+  width: varBase.$customSizeP100;
+  border-radius: varBase.$radiusBorderThin;
+}
+
+%bgLight {
+  background-color: varBase.$colorLight;
+}
+
+%paddingBottom5 {
+  padding-bottom: 5px;
+}
+
+%padding20 {
+  padding: 20px;
+}
+
+body {
+  .maxHeight400 {
+    @include varMix.mxHeightPx(400);
+    @extend %paddingBottom5 !optional;
+  }
+
+  .maxHeight425 {
+    @include varMix.mxHeightPx(425);
+    @extend %paddingBottom5 !optional;
+  }
+
+  .maxHeight500 {
+    @include varMix.mxHeightPx(500);
+    @extend %paddingBottom5 !optional;
+  }
+
+  .minmaxHeight500 {
+    @include varMix.mnxhx(500, 500);
+  }
+
+  .pageWrapView {
+    width: varBase.$customSizeP100;
+    height: calc(100vh - 60px);
+
+    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+      position: relative;
+    }
+  }
+
+  .defaultList {
+
+    li {
+      line-height: 1.5;
+    }
+
+  }
+
+  .columnList {
+    padding-left: 1.25rem;
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+    -webkit-column-gap: 2.5rem;
+    -moz-column-gap: 2.5rem;
+    column-gap: 2.5rem;
+
+    @include varMix.breakpoint(varBase.$bpSmall, varBase.$bpMax) {
+      -webkit-column-count: 1;
+      -moz-column-count: 1;
+      column-count: 1;
+      -webkit-column-gap: 1.5rem;
+      -moz-column-gap: 1.5rem;
+      column-gap: 1.5rem;
+
+    }
+
+    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
+      -webkit-column-gap: 1.75rem;
+      -moz-column-gap: 1.75rem;
+      column-gap: 1.75rem;
+    }
+
+    li {
+      list-style: varBase.$customNone;
+      padding-left: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+  }
+
+  .lightCard {
+    @extend %lightCard !optional;
+    @extend %padding20 !optional;
+    @extend %bgLight !optional;
+
+    &None {
+      @extend %lightCard !optional;
+    }
+
+    &NoBg {
+      @extend %lightCard !optional;
+      @extend %padding20 !optional;
+    }
+
+    &NoPad {
+      @extend %lightCard !optional;
+      @extend %bgLight !optional;
+    }
+
+    &NoBR {
+      @extend %bgLight !optional;
+      @extend %padding20 !optional;
+      width: varBase.$customSizeP100;
+      border-radius: varBase.$radiusBorderNone;
+    }
+
+  }
+
+  .dot {
+    border-radius: varBase.$radiusBorderCircle;
+    display: varBase.$displayInlineBlock;
+
+    @each $dotName,
+    $dotSize in varBase.$dotSizeRange {
+      &__#{$dotName} {
+        @include varMix.whx($dotSize);
+      }
+    }
+
+  }
+
+  .inputNotVisible {
+    margin: varBase.$customZero varBase.$customZero varBase.$customZero -1px;
+    @include varMix.appearanceNone;
+    @include varMix.zeroAbsoluteTL;
+    @include varMix.whp100;
+    cursor: varBase.$customPointer;
+    opacity: varBase.$customZero;
+    z-index: varBase.$customOne;
+  }
+
+  .disablePointer {
+    cursor: varBase.$customDefault;
+    pointer-events: varBase.$customNone;
+  }
+
+}

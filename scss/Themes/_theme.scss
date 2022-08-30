@@ -1,0 +1,85 @@
+@use "./../Base/Variables" as varBase;
+@use "./../Abstract" as varMix;
+
+@include varMix.scrollbar(10,
+  varBase.$colorSecondaryBluePebble,
+  varBase.$colorSecondaryPolkadotGrey,
+  varBase.$radiusBorderSmall,
+  varBase.$radiusBorderSmall,
+  varBase.$colorSecondaryBluePebble,
+  varBase.$colorSecondaryPolkadotGrey);
+
+@include varMix.fullscreen(varBase.$colorSecondaryPolkadotGrey);
+
+body {
+  background-color: varBase.$colorPrimary;
+  color: varBase.$colorTextDetailLabel;
+
+  .titleSubSection,
+  .titleSection,
+  .supportLink,
+  a {
+    color: varBase.$colorSecondaryBlackPearl;
+  }
+
+  .transparentBg,
+  .cardBlockTransparent {
+    background-color: varBase.$colorTransparent;
+  }
+
+  .cardBlock {
+    background-color: varBase.$colorLight;
+  }
+
+  .themeLight,
+  &.themeLight {
+
+    @each $name,
+    $color in varBase.$colorRange {
+      .bg-#{$name} {
+        background-color: $color;
+      }
+
+      .colr#{$name} {
+        color: $color;
+      }
+
+      .sdw-#{$name} {
+        @include varMix.shadowPer(varBase.$customZero, varBase.$customZero, 6px, varBase.$customZero, $color, 0.1);
+      }
+    }
+
+    @each $name,
+    $color in varBase.$colorText {
+      .text-#{$name} {
+        color: $color;
+      }
+    }
+
+    .bd {
+      border-color: varBase.$colorSecondaryPolkadotGrey;
+
+      @each $side,
+      $sideName in varBase.$sides {
+
+        @each $borderColorName,
+        $borderColorValue in varBase.$borderColorRange {
+          @if ($sideName =='all') {
+            &__#{$borderColorName} {
+              border-color: $borderColorValue;
+            }
+          }
+
+          @else {
+            &--#{$side}__#{$borderColorName} {
+              border-#{$sideName}-color: $borderColorValue;
+            }
+          }
+
+        }
+      }
+    }
+
+  }
+
+}

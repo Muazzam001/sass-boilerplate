@@ -1,0 +1,98 @@
+@use "./../Base/Variables" as varBase;
+
+body {
+
+    @each $side,
+    $sideName in varBase.$sides {
+
+        @each $space in varBase.$spacing {
+
+            @if ($sideName =='all') {
+
+                @if ($space  !=0) {
+                    .pd#{$side}#{$space} {
+                        padding: #{$space}px;
+                    }
+
+                    .mg#{$space} {
+                        margin: #{$space}px;
+                    }
+
+                    .mgn#{$space} {
+                        margin: -#{$space}px;
+                    }
+
+                    .mgAuto {
+                        margin: auto;
+                    }
+
+                }
+
+                @else {
+                    .pd#{$space} {
+                        padding: #{$space};
+                    }
+
+                    .mg#{$space} {
+                        margin: #{$space};
+                    }
+                }
+
+            }
+
+            @else if ($sideName =='block' or $sideName =='inline') {
+
+                .pd#{$side}#{$space} {
+                    padding-#{$sideName}: #{$space}px;
+                }
+
+                .mg#{$side}#{$space} {
+                    margin-#{$sideName}: #{$space}px;
+                }
+
+                .mg#{$side}n#{$space} {
+                    margin-#{$sideName}: -#{$space}px;
+                }
+
+                .mg#{$side}Auto {
+                    margin-#{$sideName}: auto;
+                }
+            }
+
+            @else {
+
+                @if ($space  !=0) {
+                    .pd#{$side}#{$space} {
+                        padding-#{$sideName}: #{$space}px;
+                    }
+
+                    .mg#{$side}#{$space} {
+                        margin-#{$sideName}: #{$space}px;
+                    }
+
+                    .mg#{$side}n#{$space} {
+                        margin-#{$sideName}: -#{$space}px;
+                    }
+
+                }
+
+                @else {
+                    .pd#{$side}#{$space} {
+                        padding-#{$sideName}: #{$space};
+                    }
+
+                    .mg#{$side}#{$space} {
+                        margin-#{$sideName}: #{$space};
+                    }
+
+                }
+
+                .mg#{$side}Auto {
+                    margin-#{$sideName}: auto;
+                }
+
+            }
+        }
+
+    }
+}

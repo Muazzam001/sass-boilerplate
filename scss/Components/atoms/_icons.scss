@@ -1,0 +1,342 @@
+@use "./../../Base/Variables" as varBase;
+@use "./../../Abstract" as varMix;
+
+body {
+
+  .icon {
+    @include varMix.customicon();
+    background-color: varBase.$colorPrimaryAshGrey;
+
+    &--expandable {
+      // @include varMix.maskImage(varBase.$defaultImagePath + "expandable.svg");
+
+      &_on {
+        @include varMix.rotation(180);
+      }
+    }
+
+    // &--longArrow {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "downangle.svg");
+
+    //   &_top {
+    //     @include varMix.rotation(180);
+    //   }
+
+    //   &_right {
+    //     @include varMix.rotation(180);
+    //   }
+
+    //   &_right {
+    //     @include varMix.rotation(180);
+    //   }
+
+    //   &_left {
+    //     @include varMix.rotation(180);
+    //   }
+
+    // }
+
+    // &--angle {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "angle.svg");
+
+    //   &_top {
+    //     @include varMix.rotation(180);
+    //   }
+
+    //   &_right {
+    //     @include varMix.rotation(180);
+    //   }
+
+    //   &_bottom {
+    //     @include varMix.rotation(180);
+    //   }
+
+    //   &_left {
+    //     @include varMix.rotation(180);
+    //   }
+
+    // }
+
+    // &--arrowO {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "download.svg");
+
+    //   &.up {
+    //     @include varMix.rotation(180deg);
+    //   }
+
+    //   &.left {
+    //     @include varMix.rotation(90);
+    //   }
+
+    //   &.right {
+    //     @include varMix.rotation(-90);
+    //   }
+
+    // }
+
+    // &--themeLight {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "light.svg");
+    // }
+
+    // &--themeDark {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "dark.svg");
+    // }
+
+    // &--hamburger {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "navbar.svg");
+    // }
+
+    // &--home {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "home.svg");
+    // }
+
+    // &--help {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "help.svg");
+    // }
+
+    // &--settings {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "settings.svg");
+    // }
+
+    // &--bell {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "bell.svg");
+    //   position: relative;
+
+    //   &::before {
+    //     border: varBase.$border-size-thin varBase.$border-type-solid varBase.$colorLight;
+    //     border-radius: varBase.$border-radius-size-circle;
+    //     @include varMix.borderSizingBox;
+    //     @include varMix.whx(9);
+    //     position: absolute;
+    //     content: "";
+    //     z-index: 9;
+    //     top: 3px;
+    //     right: 0;
+    //   }
+
+    //   &--on {
+    //     &::before {
+    //       background: varBase.$primary-blue-ribbon;
+    //     }
+    //   }
+    // }
+
+
+    // &--sort {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "sorting.svg");
+
+    //   &--down,
+    //   &--up {
+    //     position: relative;
+
+    //     &::before {
+    //       z-index: 9;
+    //       content: "";
+    //       @include varMix.whx(0);
+    //       border-left: varBase.$border-size-thicker varBase.$border-type-solid varBase.$background-transparent;
+    //       border-right: varBase.$border-size-thicker varBase.$border-type-solid varBase.$background-transparent;
+    //     }
+    //   }
+
+    //   &--up {
+    //     &::before {
+    //       @include varMix.zeroAbsoluteTR;
+    //       border-bottom: varBase.$border-size-thicker varBase.$border-type-solid varBase.$colorPrimaryFreshApple;
+    //     }
+    //   }
+
+    //   &--down {
+    //     &::before {
+    //       @include varMix.zeroAbsoluteBR;
+    //       border-top: varBase.$border-size-thicker varBase.$border-type-solid varBase.$colorSecondaryFlamingo;
+    //     }
+    //   }
+    // }
+
+    // &--menudots {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "menudots.svg");
+    // }
+
+    // &--eye {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "eye.svg");
+    // }
+
+    // &--eyecross {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "eyecross.svg");
+    // }
+
+    // &--refresh {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "refresh.svg");
+    // }
+
+    // &--revert {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "revert.svg");
+    // }
+
+    // &--tick {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "tick.svg");
+    // }
+
+    // &--close {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "close.svg");
+    // }
+
+    // &--edit {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "edit.svg");
+    // }
+
+    // &--delete {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "delete.svg");
+    // }
+
+    // &--copy {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "copy.svg");
+    // }
+
+    // &--list {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "list.svg");
+    // }
+
+    // &--userroles {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "userroles.svg");
+    // }
+
+    // &--usersicon {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "usersicon.svg");
+    // }
+
+    // &--lookup {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "lookup.svg");
+    // }
+
+    // &--cardView {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "cardView.svg");
+    // }
+
+    // &--starFilled {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "starFilled.svg");
+    // }
+
+    // &--smartcreate {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "smartcreate.svg");
+    // }
+
+    // &--approved {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "approved.svg");
+    // }
+
+    // &--copyDuplicate {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "copyDuplicate.svg");
+    // }
+
+    // &--checklist {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "checklist.svg");
+    // }
+
+    // &--drag {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "clickdrag.svg");
+    // }
+
+    // &--badge {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "badge.svg");
+    // }
+
+    // &--mapMarker {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "mapMarker.svg");
+    // }
+
+    // &--user {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "user.svg");
+    // }
+
+    // &--userProfile {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "userprofile.svg");
+    // }
+
+    // &--logout {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "logout.svg");
+    // }
+
+    // &--schedule {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "schedule.svg");
+    // }
+
+    // &--admin {
+    //   @include varMix.maskImage(varBase.$defaultImagePath + "admin.svg");
+    // }
+
+    // &__outline {
+
+    //   &--plusO {
+    //     @include varMix.maskImage(varBase.$defaultImagePath + "plusoutline.svg");
+    //   }
+
+    //   &--minusO {
+    //     @include varMix.maskImage(varBase.$defaultImagePath + "minusoutline.svg");
+    //   }
+
+    // }
+
+    //     // IMAGE BASED ICON 
+    // &_icon-img {
+
+    //   &.english {
+    //     background-image: url(varBase.$defaultImagePathLang + "english.png");
+    //   }
+
+    // }
+
+    // ICON STATES
+
+    &--light {
+      background-color: varBase.$colorLight;
+    }
+
+    &--dark {
+      background-color: varBase.$colorLight;
+    }
+
+    &--secondary {
+      background-color: varBase.$colorSecondaryBluePebble;
+    }
+
+    &--info {
+      background-color: varBase.$colorSecondaryFlamingo;
+    }
+
+    &--success {
+      background-color: varBase.$colorPrimaryFreshApple;
+    }
+
+    &--warning {
+      background-color: varBase.$colorWarning;
+    }
+
+    &--danger {
+      background-color: varBase.$colorSecondaryFlamingo;
+    }
+
+    &--active {
+      background-color: varBase.$colorSecondaryBlackPearl;
+    }
+
+    &--disabled {
+      background-color: varBase.$colorPrimaryInsightGrey;
+    }
+
+    // ICON SIZES
+    & {
+
+      @each $iconName,
+      $iconValue in varBase.$iconSizes {
+        &--#{$iconName} {
+          width: #{$iconValue}+'px';
+          height: #{$iconValue}+'px';
+        }
+      }
+
+    }
+
+  }
+
+}

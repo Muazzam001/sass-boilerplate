@@ -1,0 +1,97 @@
+$imgBase: "../assets/images/";
+
+$defaultImagePathLang: $imgBase + "lang/";
+$defaultImagePath: $imgBase + "/";
+
+$customContentNone: '';
+
+$customZero: 0;
+$customOne: 1;
+$customSizeP100: 100%;
+$customNone: none;
+$customAuto: auto;
+$customDefault: default;
+$customPointer: pointer;
+$customUnset: unset;
+$customHidden: hidden;
+$customVisible: visible;
+
+$spacing: (
+    0,
+    2,
+    4,
+    6,
+    10,
+    16,
+    20,
+    40,
+    60,
+    100
+);
+
+$sides: (
+    '': all,
+    'y': block,
+    'x': inline,
+    't': top,
+    'r': right,
+    'b': bottom,
+    'l': left
+);
+
+$iconSizes: (
+    "2xs": 8,
+    "xs": 10,
+    "sm": 12,
+    "md": 14,
+    "lg": 20,
+    "xl": 24,
+    "2xl": 32,
+    "3xl": 64,
+);
+
+$imgSizes: (
+    "none": $customZero,
+    "3xs": 20,
+    "2xs": 40,
+    "xs": 60,
+    "sm": 80,
+    "md": 100,
+    "lg": 150,
+    "xl": 200,
+    "2xl": 300,
+);
+
+$dotSizeRange: (
+    "none": $customZero,
+    "2xs": 5,
+    "xs": 10,
+    "sm": 15,
+    "md": 20,
+    "lg": 25,
+    "xl": 30,
+    "2xl": 50,
+);
+
+$cursorRange: (
+    "auto": $customAuto,
+    "default": $customDefault,
+    "pointer": $customPointer,
+    "grab": grab,
+    "not-allowed": not-allowed,
+    "no-drop": no-drop,
+    "move": move,
+    "none": none,
+);
+
+$sidesflow: (
+    '':all,
+    'y': block,
+    'x': inline,
+);
+
+$overflowRange: (
+    "auto": $customAuto,
+    "hidden": $customHidden,
+    "unset": $customUnset,
+);

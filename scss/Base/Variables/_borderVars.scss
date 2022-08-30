@@ -1,0 +1,83 @@
+$szBorderNone: none;
+$szBorderThin: 1px;
+$szBorderLight: 2px;
+$szBorderSmall: 3px;
+$szBorderMedium: 4px;
+$szBorderLarge: 5px;
+$szBorderThick: 8px;
+$szBorderThicker: 10px;
+$szBorderThickest: 12px;
+
+$borderWidthRange: (
+  "None": $szBorderNone,
+  "Thin": $szBorderThin,
+  "Light": $szBorderLight,
+  "Small": $szBorderSmall,
+  "Mid": $szBorderMedium,
+  "Large": $szBorderLarge,
+  "Thick": $szBorderThick,
+  "Thicker": $szBorderThicker,
+  "Thickest": $szBorderThickest,
+);
+
+$styleBorderNone: none;
+$styleBorderInherit: inherit;
+$styleBorderInitial: initial;
+$styleBorderHidden: hidden;
+$styleBorderDotted: dotted;
+$styleBorderDashed: dashed;
+$styleBorderSolid: solid;
+$styleBorderDouble: double;
+$styleBorderGroove: groove;
+$styleBorderRidge: ridge;
+$styleBorderInset: inset;
+$styleBorderOutset: outset;
+$styleBorderUnset: unset;
+
+$borderTypeRange: (
+  "None": $styleBorderNone,
+  "Inherit": $styleBorderInherit,
+  "Initial": $styleBorderInitial,
+  "Hidden": $styleBorderHidden,
+  "Dotted": $styleBorderDotted,
+  "Overline": $styleBorderDashed,
+  "Solid": $styleBorderSolid,
+  "Double": $styleBorderDouble,
+  "Groove": $styleBorderGroove,
+  "Ridge": $styleBorderRidge,
+  "Inset": $styleBorderInset,
+  "Outset": $styleBorderOutset,
+  "Unset": $styleBorderUnset,
+);
+
+$radiusBorderNone: 0;
+$radiusBorderThinner: 0.125rem;
+$radiusBorderThin: 0.25rem;
+$radiusBorderLight: 0.375rem;
+$radiusBorderSmall: 0.5rem;
+$radiusBorderMedium: 0.675rem;
+$radiusBorderLarge: 0.75rem;
+$radiusBorderLarger: 1rem;
+$radiusBorderLargest: 1.25rem;
+$radiusBorderRoundThick: 1.5rem;
+$radiusBorderRoundThicker: 1.75rem;
+$radiusBorderRoundThickest: 2rem;
+$radiusBorderRoundMax: 50px;
+$radiusBorderCircle: 100%;
+
+$borderRadiusRange: (
+  "None": $radiusBorderNone,
+  "Thinner": $radiusBorderThinner,
+  "Thin": $radiusBorderThin,
+  "Light": $radiusBorderLight,
+  "Small": $radiusBorderSmall,
+  "Default": $radiusBorderMedium,
+  "Large": $radiusBorderLarge,
+  "Larger": $radiusBorderLarger,
+  "Largest": $radiusBorderLargest,
+  "RoundThick": $radiusBorderRoundThick,
+  "RoundThicker": $radiusBorderRoundThicker,
+  "RoundThickest": $radiusBorderRoundThickest,
+  "RoundMax": $radiusBorderRoundMax,
+  "Circle": $radiusBorderCircle,
+);

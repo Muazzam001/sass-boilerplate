@@ -1,0 +1,20 @@
+$bpMin: min;
+$bpMax: max;
+
+$bp2xSmall: 320px;
+$bpXSmall: 480px;
+$bpSmall: 768px;
+$bpMedium: 1024px;
+$bpLarge: 1280px;
+$bpXLarge: 1440px;
+$bp2xLarge: 1920px;
+
+$breakpoints: (
+    "xxs": $bp2xSmall,
+    "xs": $bpXSmall,
+    "sm": $bpSmall,
+    "md": $bpMedium,
+    "lg": $bpLarge,
+    "xlg": $bpXLarge,
+    "xxlg": $bp2xLarge,
+);

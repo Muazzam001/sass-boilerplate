@@ -1,0 +1,64 @@
+@use "./../Base/Variables" as varBase;
+
+.overflowHidden {
+    overflow: hidden;
+}
+
+.overflowXHidden {
+    overflow-x: hidden;
+}
+
+.overflowYHidden {
+    overflow-y: hidden;
+}
+
+.overflowXAuto {
+    overflow-x: auto;
+}
+
+.overflowYAuto {
+    overflow-y: auto;
+}
+
+.overflowUnset {
+    overflow: unset;
+}
+
+.overflowXUnset {
+    overflow-x: unset;
+}
+
+.overflowYUnset {
+    overflow-y: unset;
+}
+
+body {
+
+    @each $side,
+    $sideflow in varBase.$sidesflow {
+
+        @each $overflowName,
+        $overflowValue in varBase.$overflowRange {
+            @if ($sideflow =='block' or $sideflow =='inline') {
+                &--#{$side}__#{$borderStyleName} {
+                    border-#{$sideName}-style: $borderStyleValue;
+                }
+            }
+
+            @else {
+
+                @if ($sideName =='all') {
+                    &__#{$borderStyleName} {
+                        border-style: $borderStyleValue;
+                    }
+                }
+
+                @else {
+                    &--#{$side}__#{$borderStyleName} {
+                        border-#{$sideName}-style: $borderStyleValue;
+                    }
+                }
+            }
+        }
+    }
+}

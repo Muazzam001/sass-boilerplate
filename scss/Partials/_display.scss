@@ -1,0 +1,74 @@
+@use "./../Base/Variables" as varBase;
+@use "./../Abstract" as varMix;
+
+.visible {
+    visibility: varBase.$customVisible;
+}
+
+.hidden {
+    visibility: varBase.$customHidden;
+}
+
+.dNone {
+    display: varBase.$customNone;
+}
+
+.dBlock {
+    display: varBase.$displayBlock;
+}
+
+.dInlineBlock {
+    display: varBase.$displayInlineBlock;
+}
+
+.dFlex {
+    @include varMix.dFlex;
+}
+
+.dInlineFlex {
+    @include varMix.dInlineFlex;
+}
+
+.justifyContentStart {
+    @include varMix.justifyContentStart;
+}
+
+.justifyContentCenter {
+    @include varMix.justifyContentCenter;
+}
+
+.justifyContentEnd {
+    @include varMix.justifyContentEnd;
+}
+
+.justifyContentBetween {
+    @include varMix.justifyContentBetween;
+}
+
+.justifyContentAround {
+    @include varMix.justifyContentAround;
+}
+
+.alignItemsStart {
+    @include varMix.alignItemsStart;
+}
+
+.alignItemsCenter {
+    @include varMix.alignItemsCenter;
+}
+
+.alignItemsEnd {
+    @include varMix.alignItemsEnd;
+}
+
+.alignItemsStretch {
+    @include varMix.alignItemsStretch;
+}
+
+.alignItemsBaseline {
+    @include varMix.alignItemsBaseline;
+}
+
+.flexHorizontallyBetween {
+    @include varMix.flexHorizontallyBetween;
+}

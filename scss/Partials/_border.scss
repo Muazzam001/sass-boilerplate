@@ -1,0 +1,72 @@
+@use "./../Base/Variables" as varBase;
+
+body {
+
+    @each $name,
+    $value in varBase.$borderRadiusRange {
+        .br-#{$name} {
+            border-radius: $value;
+        }
+    }
+
+    .bd {
+
+        @each $side,
+        $sideName in varBase.$sides {
+
+            @each $borderWidthName,
+            $borderWidthValue in varBase.$borderWidthRange {
+
+                @if ($sideName =='block' or $sideName =='inline') {
+                    &--#{$side}__#{$borderWidthName} {
+                        border-#{$sideName}-width: $borderWidthValue;
+                    }
+                }
+
+                @else {
+
+                    @if ($sideName =='all') {
+                        &__#{$borderWidthName} {
+                            border-width: $borderWidthValue;
+                        }
+                    }
+
+                    @else {
+                        &--#{$side}__#{$borderWidthName} {
+                            border-#{$sideName}-width: $borderWidthValue;
+                        }
+                    }
+                }
+            }
+
+            @each $borderStyleName,
+            $borderStyleValue in varBase.$borderTypeRange {
+
+                @if ($sideName =='block' or $sideName =='inline') {
+                    &--#{$side}__#{$borderStyleName} {
+                        border-#{$sideName}-style: $borderStyleValue;
+                    }
+                }
+
+                @else {
+
+                    @if ($sideName =='all') {
+                        &__#{$borderStyleName} {
+                            border-style: $borderStyleValue;
+                        }
+                    }
+
+                    @else {
+                        &--#{$side}__#{$borderStyleName} {
+                            border-#{$sideName}-style: $borderStyleValue;
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+    }
+
+}

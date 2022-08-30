@@ -1,0 +1,33 @@
+@use "./../../Base/Variables" as varBase;
+
+body {
+
+  .hDivider,
+  .vDivider {
+    background-color: varBase.$colorSecondaryPolkadotGrey;
+    display: varBase.$displayBlock;
+  }
+
+  .vDivider {
+    margin: 0 10px;
+    width: 1px;
+    height: 100%;
+  }
+
+  .hDivider {
+    margin: 10px 0;
+    height: 1px;
+    width: 100%;
+  }
+
+  .hDividerText {
+    padding: 10px;
+    position: absolute;
+    display: varBase.$displayInlineBlock;
+    background-color: varBase.$colorSecondaryPolkadotGrey;
+
+    &.litBg {
+      background-color: varBase.$colorLight;
+    }
+  }
+}

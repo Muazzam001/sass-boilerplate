@@ -1,0 +1,111 @@
+@use "sass:color";
+
+$colorDark: #212427;
+$colorLight: #fff;
+$colorTransparent: transparent;
+$colorPrimary: #f4f5f7;
+$colorSecondary: #f6faff;
+
+$colorBlackMoon: #040b1d;
+$colorWarning: #ffab00;
+
+$colorPrimaryBottleGreen: #072c21;
+$colorPrimaryFreshApple: #59c835;
+$colorPrimaryBlueRibbon: #0d4af9;
+$colorPrimaryInsightGrey: #edf5ff;
+$colorPrimaryAshGrey: #a7b3c3;
+
+$colorSecondaryBlackPearl: #0a1637;
+$colorSecondaryBluePebble: #516888;
+$colorSecondaryPolkadotGrey: #d6e3f3;
+$colorSecondaryNakedGrey: #f4f5f7;
+$colorSecondaryFlamingo: #f04646;
+
+$colorPrimaryBlueRibbonDark: #0b35aa;
+$colorSecondaryBluePebbleDark: #001845;
+
+$colorPrimaryFreshAppleLight1: lighten($colorPrimaryFreshApple, 10%);
+$colorPrimaryFreshAppleLight2: lighten($colorPrimaryFreshApple, 20%);
+$colorPrimaryFreshAppleLight3: lighten($colorPrimaryFreshApple, 30%);
+$colorPrimaryFreshAppleLight4: lighten($colorPrimaryFreshApple, 40%);
+
+$colorPrimaryFreshAppleDark1: darken($colorPrimaryFreshApple, 10%);
+$colorPrimaryFreshAppleDark2: darken($colorPrimaryFreshApple, 20%);
+$colorPrimaryFreshAppleDark3: darken($colorPrimaryFreshApple, 30%);
+$colorPrimaryFreshAppleDark4: darken($colorPrimaryFreshApple, 40%);
+
+$colorPrimaryBlueRibbonLight1: lighten($colorPrimaryBlueRibbon, 10%);
+$colorPrimaryBlueRibbonLight2: lighten($colorPrimaryBlueRibbon, 20%);
+$colorPrimaryBlueRibbonLight3: lighten($colorPrimaryBlueRibbon, 30%);
+$colorPrimaryBlueRibbonLight4: lighten($colorPrimaryBlueRibbon, 40%);
+
+$colorRiboniteGradient1: #0d4af9;
+$colorRiboniteGradient2: #244dc1;
+
+$colorMarbleGradient1: #edf5ff;
+$colorMarbleGradient2: #d6e3f3;
+
+$colorLegendBackDated: #0a1637;
+$colorLegendNew: #0d4af9;
+$colorLegendCancelled: #d6e3f3;
+$colorLegendCompleted: #59c835;
+$colorLegendDanger: #f04646;
+$colorLegendHelpful: $colorWarning;
+
+%backgroundTransparent {
+  background-color: $colorTransparent;
+}
+
+$colorRange: (
+  "dark": $colorDark,
+  "light": $colorLight,
+  "transparent": $colorTransparent,
+  "primary1": $colorPrimaryBottleGreen,
+  "primary2": $colorPrimaryFreshApple,
+  "primary3": $colorPrimaryBlueRibbon,
+  "primary4": $colorPrimaryInsightGrey,
+  "primary5": $colorPrimaryAshGrey,
+  "primary6": $colorPrimaryBlueRibbonDark,
+  "secondary1": $colorSecondaryBlackPearl,
+  "secondary2": $colorSecondaryBluePebble,
+  "secondary3": $colorSecondaryPolkadotGrey,
+  "secondary4": $colorSecondaryNakedGrey,
+  "secondary5": $colorSecondaryFlamingo,
+  "secondary6": $colorSecondaryBluePebbleDark,
+  "legendBack": $colorLegendBackDated,
+  "legendNew": $colorLegendNew,
+  "legendCancel": $colorLegendCancelled,
+  "legendComplete": $colorLegendCompleted,
+  "legendDanger": $colorLegendDanger,
+  "legendHelp": $colorLegendHelpful,
+);
+
+$colorTextHeading: #0a1637;
+$colorTextLabelPlaceholder: #a7b3c3;
+$colorTextDetailLabel: #516888;
+$colorTextHyperlink: #0d4af9;
+
+$colorText: (
+  "textHeading": $colorTextHeading,
+  "textDetailLabel": $colorTextDetailLabel,
+  "textLabelPlaceholder": $colorTextLabelPlaceholder,
+  "textHyperlink": $colorTextHyperlink,
+);
+
+$colorBorderLight: $colorSecondaryPolkadotGrey;
+$colorBorderDark: $colorSecondaryPolkadotGrey;
+$colorBorderDefault: $colorSecondaryPolkadotGrey;
+$colorBorderActive: $colorPrimaryBlueRibbon;
+$colorBorderError: $colorSecondaryFlamingo;
+$colorBorderCorrect: $colorPrimaryFreshApple;
+$colorBorderWarn: $colorLegendHelpful;
+
+$borderColorRange: (
+  "dark": $colorDark,
+  "light": $colorLight,
+  "plain": $colorBorderDefault,
+  "active": $colorBorderActive,
+  "error": $colorBorderError,
+  "correct": $colorBorderCorrect,
+  "warn": $colorBorderWarn,
+);

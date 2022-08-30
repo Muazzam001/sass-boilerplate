@@ -1,0 +1,18 @@
+@use "./root" as *;
+
+* {
+  scrollbar-width: thin;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fff;
+  font-size: 1rem;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #000;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}

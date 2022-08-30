@@ -1,0 +1,44 @@
+@use "./../Base/Variables" as varBase;
+@use "./../Abstract" as varMix;
+
+.floatNone {
+    float: varBase.$customNone;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}
+
+.positionRelative {
+    position: relative;
+}
+
+.positionAbsolute {
+    position: absolute;
+}
+
+.positionSticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.zeroAbsoluteTL {
+    @include varMix.zeroAbsoluteTL;
+}
+
+.zeroAbsoluteTR {
+    @include varMix.zeroAbsoluteTR;
+}
+
+.zeroAbsoluteBL {
+    @include varMix.zeroAbsoluteTL;
+}
+
+.zeroAbsoluteBR {
+    @include varMix.zeroAbsoluteTR;
+}

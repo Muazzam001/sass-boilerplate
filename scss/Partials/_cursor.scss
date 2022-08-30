@@ -1,0 +1,11 @@
+@use "./../Base/Variables" as varBase;
+
+body {
+
+    @each $name,
+    $value in varBase.$cursorRange {
+        .cursor-#{$name} {
+            cursor: $value;
+        }
+    }
+}

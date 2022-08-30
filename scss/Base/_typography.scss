@@ -1,0 +1,241 @@
+@use "sass:math";
+@use "./Variables" as varBase;
+@use "./../Abstract" as varMix;
+
+%familyFontSourceSansPro {
+  font-family: varBase.$familyFontSourceSansPro;
+}
+
+body {
+  font-weight: varBase.$weightFontRegular;
+  font-size: varBase.$sizeFontLarge;
+  line-height: varBase.$sizeFontLargest;
+
+  &,
+  .familyFontSourceSansPro {
+    @extend %familyFontSourceSansPro;
+  }
+
+  @include varMix.breakpoint(varBase.$bp2xLarge, varBase.$bpMax) {
+    font-size: varBase.$sizeFontLarger;
+  }
+
+  @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+    font-size: varBase.$sizeFontDefault;
+  }
+
+  h1,
+  .heading1,
+  h2,
+  .heading2,
+  h3,
+  .heading3,
+  h4,
+  .heading4,
+  h5,
+  .heading5,
+  h6,
+  .heading6 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: varBase.$weightFontSemiBold;
+  }
+
+  h1,
+  .heading1 {
+    font-size: varBase.$sizeFont6xLarge;
+    line-height: varBase.$sizeFont6xLargest;
+
+    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+      font-size: varBase.$sizeFont5xLarge;
+      line-height: varBase.$sizeFont6xLarger;
+    }
+
+  }
+
+  h2,
+  .heading2 {
+    font-size: varBase.$sizeFont4xLarger;
+    line-height: varBase.$sizeFont6xLarge;
+
+    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+      font-size: varBase.$sizeFont3xLarge;
+      line-height: varBase.$sizeFont5xLarge;
+    }
+  }
+
+  h3,
+  .heading3 {
+    font-size: varBase.$sizeFont2xLargest;
+    line-height: varBase.$sizeFont4xLarger;
+
+    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+      font-size: varBase.$sizeFont2xLarge;
+      line-height: varBase.$sizeFont3xLarge;
+    }
+  }
+
+  h4,
+  .heading4 {
+    font-size: varBase.$sizeFontXLarger;
+    line-height: varBase.$sizeFont2xLargest;
+
+    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+      font-size: varBase.$sizeFontLargest;
+      line-height: varBase.$sizeFont2xLarger;
+    }
+  }
+
+  h5,
+  .heading5 {
+    font-size: varBase.$sizeFontLargest;
+    line-height: varBase.$sizeFontXLarger;
+
+    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+      font-size: varBase.$sizeFontLarger;
+      line-height: varBase.$sizeFontXLarge;
+    }
+  }
+
+  h6,
+  .heading6 {
+    font-size: varBase.$sizeFontLarge;
+    line-height: varBase.$sizeFont2xLarge;
+
+    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+      font-size: varBase.$sizeFontDefault;
+      line-height: varBase.$sizeFontXLarge;
+    }
+  }
+
+  .text1 {
+    font-size: varBase.$sizeFontXLarge;
+    line-height: varBase.$sizeFontXLargest;
+
+    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+      font-size: varBase.$sizeFontLargest;
+      line-height: varBase.$sizeFontXLarge;
+    }
+  }
+
+  .titleSection,
+  .text2 {
+    font-size: varBase.$sizeFontLargest;
+    line-height: varBase.$sizeFontXLarge;
+
+    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+      .text2 {
+        font-size: varBase.$sizeFontLarger;
+        line-height: varBase.$sizeFontLargest;
+      }
+    }
+  }
+
+  .titleSubSection,
+  .text3 {
+    font-size: varBase.$sizeFontLarge;
+    line-height: varBase.$sizeFontXLarge;
+
+    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+      font-size: varBase.$sizeFontDefault;
+      line-height: varBase.$sizeFontLargest;
+    }
+  }
+
+  .text4 {
+    font-size: varBase.$sizeFontDefault;
+    line-height: varBase.$sizeFontLargest;
+
+    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+      font-size: math.div((varBase.$sizeFontDefault + varBase.$sizeFontSmall), 2);
+      line-height: varBase.$sizeFontLarger;
+    }
+  }
+
+  .text5 {
+    font-size: varBase.$sizeFontSmall;
+    line-height: varBase.$sizeFontLarger;
+
+    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+      .text5 {
+        font-size: varBase.$sizeFontSmaller;
+        line-height: varBase.$sizeFontLarge;
+      }
+    }
+  }
+
+  .text6 {
+    font-size: varBase.$sizeFontSmaller;
+    line-height: varBase.$sizeFontLarge;
+  }
+
+  .supportLink {
+    font-size: varBase.$sizeFontSmall;
+    line-height: varBase.$sizeFontLarger;
+    font-weight: varBase.$weightFontExtralight;
+
+    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+      font-size: varBase.$sizeFontSmaller;
+      line-height: varBase.$sizeFontLarge;
+    }
+  }
+
+  .textTruncate {
+    @include varMix.textTruncate;
+  }
+
+  .wrapText {
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+  }
+
+  .nowrap {
+    white-space: nowrap;
+  }
+
+  a,
+  .supportLink {
+    cursor: varBase.$customPointer;
+  }
+
+  a,
+  .textDecorNone {
+    -webkit-text-decoration: varBase.$decorationTextNone;
+    text-decoration: varBase.$decorationTextNone;
+  }
+
+  .supportLink,
+  .textDecorUnderline {
+    -webkit-text-decoration: varBase.$decorationTextUnderline;
+    text-decoration: varBase.$decorationTextUnderline;
+  }
+
+  @each $nameWeight,
+  $varWeight in varBase.$fontWeightRange {
+    .fontWeight#{$nameWeight} {
+      font-weight: $varWeight;
+    }
+  }
+
+  @each $nameStyle,
+  $varStyle in varBase.$fontStyleRange {
+    .fontStyle#{$nameStyle} {
+      font-style: $varStyle;
+    }
+  }
+
+  @each $nameTransform,
+  $varTransform in varBase.$textTransformRange {
+    .textTrans#{$nameTransform} {
+      text-transform: $varTransform;
+    }
+  }
+
+  @each $nameAlign,
+  $varAlign in varBase.$textAlignRange {
+    .textAlign#{$nameAlign} {
+      text-align: $varAlign;
+    }
+  }
+}

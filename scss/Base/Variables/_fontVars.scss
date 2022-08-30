@@ -1,0 +1,119 @@
+@use "sass:math";
+$familyFontSourceSansPro: "Source Sans Pro", Verdana, sans-serif;
+
+// $familyFontUpgrade:  "Upgrade", Tahoma, Verdana, sans-serif;
+// $familyFontTahoma: Tahoma, "Upgrade", Verdana, sans-serif;
+
+//  Font Weight Variable Start
+$weightFontThin: 100;
+$weightFontExtralight: 200;
+$weightFontLight: 300;
+$weightFontRegular: 400;
+$weightFontMedium: 500;
+$weightFontSemiBold: 600;
+$weightFontBold: 700;
+$weightFontExtraBold: 800;
+$weightFontBlack: 900;
+
+$fontWeightRange: (
+    "Thin": $weightFontThin,
+    "Extralight": $weightFontExtralight,
+    "Light": $weightFontLight,
+    "Regular": $weightFontRegular,
+    "Medium": $weightFontMedium,
+    "Semibold": $weightFontSemiBold,
+    "Bold": $weightFontBold,
+    "Extrabold": $weightFontExtraBold,
+    "Black": $weightFontBlack,
+);
+
+//  Font Style Variable Start
+
+$styleFontNormal: normal;
+$styleFontItalic: italic;
+
+$fontStyleRange: (
+    "Normal": $styleFontNormal,
+    "Italic": $styleFontItalic,
+);
+
+//  Font Weight Variable End
+
+//  Text Transform Variable Starts
+$transformTextCapitalize: capitalize;
+$transformTextUppercase: uppercase;
+$transformTextLowercase: lowercase;
+
+$textTransformRange: (
+    "Capitalize": $transformTextCapitalize,
+    "Uppercase": $transformTextUppercase,
+    "Lowercase": $transformTextLowercase,
+);
+
+//  /Text Transform Variable End
+
+//  Text Decoration Variable Starts
+$decorationTextNone: none;
+$decorationTextUnderline: underline;
+$decorationTextLineThrough: line-through;
+$decorationTextOverline: overline;
+$decorationTextDotted: dotted;
+$decorationTextDouble: double;
+
+$textDecorationRange: (
+    "None": $decorationTextNone,
+    "Underline": $decorationTextUnderline,
+    "LineThrough": $decorationTextLineThrough,
+    "Overline": $decorationTextOverline,
+    "Dotted": $decorationTextDotted,
+    "Double": $decorationTextDouble,
+);
+
+//  /Text Decoration Variable End
+
+//  Text Align Addition Variable Start
+
+$alignTextLeft: left;
+$alignTextCenter: center;
+$alignTextRight: right;
+$alignTextJustify: justify;
+
+$textAlignRange: (
+    "Left": $alignTextLeft,
+    "Center": $alignTextCenter,
+    "Right": $alignTextRight,
+    "Justify": $alignTextJustify,
+);
+
+//  Text Align Addition Variable End
+
+//  Font Size Variable Start
+$sizeFontNone: 0;
+$sizeFontThin: 0.375rem;
+$sizeFontSmallest: 0.5rem;
+$sizeFontSmaller: 0.625rem;
+$sizeFontSmall: 0.75rem;
+$sizeFontDefault: 0.875rem;
+$sizeFontLarge: 1rem;
+$sizeFontLarger: 1.125rem;
+$sizeFontLargest: 1.25rem;
+$sizeFontXLarge: 1.5rem;
+$sizeFontXLarger: 1.625rem;
+$sizeFontXLargest: 1.75rem;
+$sizeFont2xLarge: 2rem;
+$sizeFont2xLarger: 2.125rem;
+$sizeFont2xLargest: 2.25rem;
+$sizeFont3xLarge: 2.5rem;
+$sizeFont3xLarger: 2.625rem;
+$sizeFont3xLargest: 2.75rem;
+$sizeFont4xLarge: 2.875rem;
+$sizeFont4xLarger: 3rem;
+$sizeFont4xLargest: 3.25rem;
+$sizeFont5xLarge: 3.5rem;
+$sizeFont5xLarger: 3.625rem;
+$sizeFont5xLargest: 3.75rem;
+$sizeFont6xLarge: 3.875rem;
+$sizeFont6xLarger: 4rem;
+$sizeFont6xLargest: 5rem;
+
+//  Font Size Variable Start

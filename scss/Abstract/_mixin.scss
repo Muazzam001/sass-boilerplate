@@ -1,0 +1,860 @@
+@use "./../Base/Variables" as varBase;
+
+%zIndex1 {
+  z-index: varBase.$customOne;
+}
+
+%zIndex9 {
+  z-index: 9;
+}
+
+%posAbsolute {
+  position: absolute;
+}
+
+%zeroTop {
+  top: varBase.$customZero;
+}
+
+%zeroRight {
+  right: varBase.$customZero;
+}
+
+%zeroBottom {
+  bottom: varBase.$customZero;
+}
+
+%zeroLeft {
+  left: varBase.$customZero;
+}
+
+/**
+* Make a context based selector a little more friendly (Parent Element)
+* @param {String} $context
+*/
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+/**
+* Event wrapper
+* @param {Bool} $self [false] - Whether or not to include current selector
+*/
+@mixin pseudoEvent($self: false) {
+  @if $self {
+
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+
+  @else {
+
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+@mixin breakpoint($bpDimension, $bpType) {
+
+  @if ($bpType =='min') {
+
+    @media (#{$bpType}-width: #{$bpDimension}) {
+      @content;
+    }
+  }
+
+  @else if (#{$bpType}=='max') {
+    @media (max-width: ($bpDimension - 0.2px)) {
+      @content;
+    }
+  }
+
+}
+
+@mixin maskImage($imgURL) {
+  -webkit-mask-image: url($imgURL);
+  mask-image: url($imgURL);
+}
+
+@mixin noScrollbar {
+  &::-webkit-scrollbar {
+    @include whx(0);
+    display: varBase.$customNone;
+  }
+}
+
+@mixin scrollbar($size: 8,
+  $thumb-color: #eee,
+  $track-color: #333,
+  $thumb-radius: 0,
+  $track-radius: 0,
+  $thumb-color-hover: #333,
+  $track-color-hover: #eee) {
+
+  // For Google Chrome
+
+  //!* scrollbar width *!
+  ::-webkit-scrollbar {
+    @include whx($size);
+  }
+
+  //!* scrollbar thumb / Handle *!
+  ::-webkit-scrollbar-thumb {
+    border-radius: #{$track-radius};
+    background-color: $thumb-color;
+
+    &:hover {
+      background-color: $thumb-color-hover;
+    }
+
+  }
+
+  //!* scrollbar track *!
+  ::-webkit-scrollbar-track {
+    border-radius: #{$track-radius};
+    background-color: $track-color;
+
+    &:hover {
+      background-color: $track-color-hover;
+    }
+
+  }
+
+  // Standard version (Firefox only for now)
+  // scrollbar-color: $thumb-color $track-color;
+}
+
+
+@mixin fullscreen($color: #333) {
+  :-webkit-full-screen {
+    /* Standard syntax / Safari */
+    background-color: $color;
+    overflow-y: auto;
+  }
+
+  :-ms-fullscreen {
+    /* IE11 */
+    background-color: $color;
+    overflow-y: varBase.$customAuto;
+
+  }
+
+  :fullscreen {
+    background-color: $color;
+    overflow-y: varBase.$customAuto;
+  }
+}
+
+@mixin zeroMarginPadding {
+  margin: varBase.$customZero;
+  padding: varBase.$customZero;
+}
+
+@mixin whx($dimension) {
+  width: #{$dimension}+"px";
+  height: #{$dimension}+"px";
+}
+
+@mixin whp($dimension) {
+  width: #{$dimension}+"%";
+  height: #{$dimension}+"%";
+}
+
+@mixin whp100 {
+  @include whp(100);
+}
+
+// @mixin width($width) {
+//   width: $width;
+// }
+
+// @mixin minWidth($minWidth) {
+//   min-width: $minWidth;
+// }
+
+// @mixin maxWidth($maxWidth) {
+//   max-width: $maxWidth;
+// }
+
+// @mixin height($height) {
+//   height: $height;
+// }
+
+@mixin mnHeightPx($minHeight) {
+  max-height: #{$minHeight}+"px";
+}
+
+@mixin mxHeightPx($maxHeight) {
+  max-height: #{$maxHeight}+"px";
+}
+
+@mixin mnxwx($dimensionA, $dimensionB) {
+  min-width: #{$dimensionA}+"px";
+  max-width: #{$dimensionB}+"px";
+}
+
+@mixin mnxhx($dimensionA, $dimensionB) {
+  min-height: #{$dimensionA}+"px";
+  max-height: #{$dimensionB}+"px";
+}
+
+@mixin mnwhx($dimension) {
+  min-width: #{$dimension}+"px";
+  min-height: #{$dimension}+"px";
+}
+
+@mixin mxwhx($dimension) {
+  max-width: #{$dimension}+"px";
+  max-height: #{$dimension}+"px";
+}
+
+@mixin customicon {
+  @include whx(20);
+  content: "";
+  cursor: pointer;
+  overflow: varBase.$customHidden;
+  display: varBase.$displayInlineBlock;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: 100% 100%;
+  mask-position: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+@mixin borderSizingBox {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin userSelectNone {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin transition($transProperty, $transDuration, $transFunction, $transDelay) {
+  -webkit-transition: $transProperty $transDuration $transFunction $transDelay;
+  -o-transition: $transProperty $transDuration $transFunction $transDelay;
+  transition: $transProperty $transDuration $transFunction $transDelay;
+}
+
+@mixin transitionUnset {
+  -webkit-transition: varBase.$custom-unset;
+  -o-transition: varBase.$custom-unset;
+  transition: varBase.$custom-unset;
+}
+
+@mixin transitionPlain {
+  @include transition(all, 0.5s, ease-in-out, 0s);
+}
+
+@mixin transitionPlain1 {
+  @include transition(all, 1s, ease-in-out, 0s);
+}
+
+%transitionPlain {
+  @include transitionPlain;
+}
+
+@mixin rotation($angle) {
+  @include transformRotate($angle, deg);
+}
+
+@mixin zoomNormal {
+  @include transformScale(1);
+  @extend %transitionPlain;
+}
+
+@mixin zoomHover {
+  @include transformScale(1.1);
+  @extend %transitionPlain;
+  z-index: 1;
+}
+
+@mixin transformUnset {
+  -webkit-transform: varBase.$custom-unset;
+  -ms-transform: varBase.$custom-unset;
+  transform: varBase.$custom-unset;
+}
+
+@mixin transformX($horizontal) {
+  -webkit-transform: translateX($horizontal);
+  -ms-transform: translateX($horizontal);
+  transform: translateX($horizontal);
+}
+
+@mixin transformY($vertical) {
+  -webkit-transform: translateY($vertical);
+  -ms-transform: translateY($vertical);
+  transform: translateY($vertical);
+}
+
+@mixin transform($horizontal, $vertical) {
+  -webkit-transform: translate($horizontal, $vertical);
+  -ms-transform: translate($horizontal, $vertical);
+  transform: translate($horizontal, $vertical);
+}
+
+@mixin transformScale($arg) {
+  -webkit-transform: scale($arg);
+  -ms-transform: scale($arg);
+  transform: scale($arg);
+}
+
+@mixin transformRotate($angle, $unit) {
+  -webkit-transform: rotate(#{$angle}+#{$unit});
+  -ms-transform: rotate(#{$angle}+#{$unit});
+  transform: rotate(#{$angle}+#{$unit});
+}
+
+@mixin noShadow {
+  outline: varBase.$customZero;
+  -webkit-box-shadow: varBase.$customNone;
+  box-shadow: varBase.$customNone;
+}
+
+@mixin shadowDrop($color) {
+  -webkit-filter: drop-shadow(-1px 0 6px $color);
+  filter: drop-shadow(-1px 0 6px $color);
+}
+
+@mixin shadowDef($color) {
+  -webkit-box-shadow: 2px 2px 10px $color;
+  box-shadow: 2px 2px 10px $color;
+}
+
+@mixin shadow($h-off, $v-off, $blur, $spread, $color) {
+  -webkit-box-shadow: $h-off $v-off $blur $spread $color;
+  box-shadow: $h-off $v-off $blur $spread $color;
+}
+
+@mixin shadowPer($h-off, $v-off, $blur, $spread, $color, $colorper) {
+  -webkit-box-shadow: $h-off $v-off $blur $spread rgba($color, $colorper);
+  box-shadow: $h-off $v-off $blur $spread rgba($color, $colorper);
+}
+
+@mixin bgWebPImage($webPImage1x, $webPImage2x, $fallbackImage1x, $fallbackImage2x) {
+  background-image: url($fallbackImage1x);
+  background-image: -webkit-image-set(url($webPImage1x) 1x,
+      url($webPImage2x) 2x,
+      url($fallbackImage1x) 1x,
+      url($fallbackImage2x) 2x);
+  background-image: image-set(url($webPImage1x) 1x,
+      url($webPImage2x) 2x,
+      url($fallbackImage1x) 1x,
+      url($fallbackImage2x) 2x);
+}
+
+@mixin bgGradientLR($color1, $color2) {
+  background-image: -o-linear-gradient(left,
+      rgba($color1, 1),
+      rgba($color1, 0.7),
+      rgba($color2, 1));
+  background-image: -webkit-gradient(linear,
+      left top, right top,
+      from(rgba($color1, 1)),
+      color-stop(rgba($color1, 0.7)),
+      to(rgba($color2, 1)));
+  background-image: linear-gradient(to right,
+      rgba($color1, 1),
+      rgba($color1, 0.7),
+      rgba($color2, 1));
+}
+
+@mixin bgGradientTB($color1, $color2) {
+  background-image: -o-linear-gradient(top,
+      rgba($color1, 1),
+      rgba($color1, 0.7),
+      rgba($color2, 1));
+  background-image: -webkit-gradient(linear,
+      left top, left bottom,
+      from(rgba($color1, 1)),
+      color-stop(rgba($color1, 0.7)),
+      to(rgba($color2, 1)));
+  background-image: linear-gradient(to bottom,
+      rgba($color1, 1),
+      rgba($color1, 0.7),
+      rgba($color2, 1));
+}
+
+@mixin bgGradientAngle($angle, $color1, $color1per, $color2, $color2per) {
+  background-image: -o-linear-gradient($angle,
+      $color1 $color1per,
+      $color2 $color2per );
+  background-image: -webkit-gradient(linear,
+      left top, left bottom,
+      from($angle),
+      color-stop($color1per, $color1),
+      color-stop($color2per, $color2) );
+  background-image: linear-gradient($angle,
+      $color1 $color1per,
+      $color2 $color2per );
+}
+
+@mixin buttonHover($colorBg, $colorText) {
+  background-color: $colorBg;
+  border-color: $colorBg;
+  color: $colorText;
+}
+
+@mixin buttonRevertHover($colorBg, $colorText) {
+  background-color: $colorText;
+  border-color: $colorBg;
+  color: $colorBg;
+}
+
+@mixin textTransform($nameTransform) {
+  text-transform: $nameTransform;
+}
+
+@mixin textAlign($nameAlign) {
+  text-align: $nameAlign;
+}
+
+@mixin vertAlign($nameVAlign) {
+  vertical-align: $nameVAlign;
+}
+
+@mixin textDecoration($nameDecoration) {
+  -webkit-text-decoration: $nameDecoration;
+  text-decoration: $nameDecoration;
+}
+
+@mixin borderType($borderWidth, $borderStyle) {
+  border-width: $borderWidth;
+  border-style: $borderStyle;
+}
+
+@mixin borderRadius($borderRadiusType) {
+  border-radius: $borderRadiusType;
+}
+
+@mixin appearanceNone {
+  -webkit-appearance: varBase.$customNone;
+  -moz-appearance: varBase.$customNone;
+  appearance: varBase.$customNone;
+}
+
+@mixin zeroAbsoluteTL {
+  @extend %posAbsolute;
+  @extend %zeroLeft;
+  @extend %zeroTop;
+}
+
+@mixin zeroAbsoluteTR {
+  @extend %posAbsolute;
+  @extend %zeroRight;
+  @extend %zeroTop;
+}
+
+@mixin zeroAbsoluteBL {
+  @extend %posAbsolute;
+  @extend %zeroLeft;
+  @extend %zeroBottom;
+
+}
+
+@mixin zeroAbsoluteBR {
+  @extend %posAbsolute;
+  @extend %zeroRight;
+  @extend %zeroBottom;
+}
+
+@mixin zeroBorderRadius {
+  border-radius: varBase.$customZero;
+  border: varBase.$customNone;
+}
+
+@mixin color($color) {
+  color: $color;
+}
+
+@mixin borderColor($color) {
+  border-color: $color;
+}
+
+@mixin backgroundColor($color) {
+  background-color: $color;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin centerBlock {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin textTruncate {
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin fontFamily($fontFamily) {
+  font-family: $fontFamily;
+}
+
+@mixin fontSize($size: 12, $base: 16) {
+  font-size: $size + px;
+  font-size: ($size / $base) * 1rem;
+}
+
+@mixin fontSizeHeight($size: 14, $lineHeight, $base: 14) {
+  line-height: #{$lineHeight};
+  @include fontSize($size, $base);
+  font-size: calc(#{$base}px + (#{$size} - #{$base}) * (100vw - 400px) / (1920 - 400));
+}
+
+@mixin fontWeight($fontWeight) {
+  font-weight: $fontWeight;
+}
+
+@mixin fontStyle($fontStyle) {
+  font-style: $fontStyle;
+}
+
+@mixin lineHeight($lineHeight: 12, $base: 16) {
+  line-height: $lineHeight + px;
+  line-height: ($lineHeight / $base) * 1rem;
+}
+
+@mixin font($fontFamily, $fontSize, $fontWeight, $fontStyle, $lineHeight, $base) {
+  @include fontFamily($fontFamily);
+  @include fontWeight($fontWeight);
+  @include fontStyle($fontStyle);
+  @include fontSizeHeight($fontStyle, $lineHeight, $base);
+}
+
+@mixin dFlexImportant {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+@mixin dInlineFlex {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+}
+
+@mixin dFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flexRow {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+@mixin flexRowReverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+@mixin flexColumn {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+@mixin flexColumnReverse {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+
+@mixin justifyItemsStart {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: start;
+  justify-content: start;
+}
+
+@mixin justifyItemsCenter {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-items: center;
+}
+
+@mixin justifyItemsEnd {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-items: end;
+}
+
+@mixin justifyItemsStretch {
+  -webkit-box-pack: stretch;
+  -ms-flex-pack: stretch;
+  justify-items: stretch;
+}
+
+@mixin justifyContentStart {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+@mixin justifyContentEnd {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+@mixin justifyContentCenter {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+@mixin justifyContentAround {
+  -ms-flex-pack: distribute;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+
+@mixin justifyContentBetween {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+@mixin alignItemsStart {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+
+@mixin alignItemsEnd {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+}
+
+@mixin alignItemsCenter {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+@mixin alignItemsStretch {
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+}
+
+@mixin alignItemsBaseline {
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  -webkit-align-items: baseline;
+  align-items: baseline;
+}
+
+@mixin alignContentStart {
+  -ms-flex-line-pack: start;
+  -webkit-align-content: flex-start;
+  align-content: flex-start;
+}
+
+@mixin alignContentEnd {
+  -ms-flex-line-pack: end;
+  -webkit-align-content: flex-end;
+  align-content: flex-end;
+}
+
+@mixin alignContentAround {
+  -ms-flex-line-pack: distribute;
+  -webkit-align-content: space-around;
+  align-content: space-around;
+}
+
+@mixin alignContentBetween {
+  -ms-flex-line-pack: justify;
+  -webkit-align-content: space-between;
+  align-content: space-between;
+}
+
+@mixin alignContentCenter {
+  -ms-flex-line-pack: center;
+  -webkit-align-content: center;
+  align-content: center;
+}
+
+@mixin alignContentStretch {
+  -ms-flex-line-pack: stretch;
+  -webkit-align-content: stretch;
+  align-content: stretch;
+}
+
+@mixin flexWrap {
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+@mixin flexNoWrap {
+  -ms-flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+@mixin flexWrapReverse {
+  -ms-flex-wrap: wrap-reverse;
+  -webkit-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+}
+
+@mixin flexFlowRowWrap {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+@mixin flexFlowRowNoWrap {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+}
+
+@mixin flexFlowColumnWrap {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column wrap;
+  -webkit-flex-flow: column wrap;
+  flex-flow: column wrap;
+}
+
+@mixin flexFlowColumnNoWrap {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column wrap;
+  -webkit-flex-flow: column wrap;
+  flex-flow: column wrap;
+}
+
+@mixin flexItemOrder($num) {
+  -webkit-box-ordinal-group: $num;
+  -webkit-order: $num;
+  -ms-flex-order: $num;
+  order: $num;
+}
+
+@mixin flexHorizontallyStart {
+  @include dFlex;
+  @include justifyContentStart;
+}
+
+@mixin flexHorizontallyCenter {
+  @include dFlex;
+  @include justifyContentCenter;
+}
+
+@mixin flexHorizontallyEnd {
+  @include dFlex;
+  @include justifyContentEnd;
+}
+
+@mixin flexHorizontallyBetween {
+  @include dFlex;
+  @include justifyContentBetween;
+}
+
+@mixin flexVerticallyStart {
+  @include dFlex;
+  @include alignItemsStart;
+}
+
+@mixin flexVerticallyCenter {
+  @include dFlex;
+  @include alignItemsCenter;
+}
+
+@mixin flexVerticallyEnd {
+  @include dFlex;
+  @include alignItemsEnd;
+}
+
+@mixin flexVerticallyStretch {
+  @include dFlex;
+  @include alignItemsStretch;
+}
+
+@mixin flexHVCenter {
+  @include dFlex;
+  @include alignItemsCenter;
+  @include justifyContentCenter;
+}
+
+@mixin flexHVExtended {
+  @include dFlex;
+  @include alignItemsStretch;
+  @include justifyContentBetween;
+}
+
+@mixin dGrid {
+  display: -ms-grid;
+  display: grid;
+}
+
+@mixin dInlineGrid {
+  display: -ms-inline-grid;
+  display: inline-grid;
+}
+
+@mixin gridVerticallyCenter {
+  @include dGrid;
+  @include alignItemsCenter;
+}
+
+@mixin gridHorizontallyCenter {
+  @include dGrid;
+  @include justifyItemsSenter;
+}

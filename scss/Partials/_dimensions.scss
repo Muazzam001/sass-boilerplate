@@ -1,0 +1,102 @@
+@use "sass:math";
+
+body {
+
+  $dimensions: (0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100);
+
+  @each $dimension in $dimensions {
+
+    .wx#{$dimension} {
+      width: #{$dimension}px;
+    }
+
+    .hx#{$dimension} {
+      height: #{$dimension}px;
+    }
+
+    .whx#{$dimension} {
+      width: #{$dimension}px;
+      height: #{$dimension}px;
+    }
+
+    .mnwhx#{$dimension} {
+      min-width: #{$dimension}px;
+      min-height: #{$dimension}px;
+    }
+
+    .mxwhx#{$dimension} {
+      max-width: #{$dimension}px;
+      max-height: #{$dimension}px;
+    }
+
+    .mnwx#{$dimension} {
+      min-width: #{$dimension}px;
+    }
+
+    .mnhx#{$dimension} {
+      min-height: #{$dimension}px;
+    }
+
+    .w#{$dimension} {
+      width: #{$dimension}#{'%'};
+    }
+
+    .h#{$dimension} {
+      height: #{$dimension}#{'%'};
+    }
+
+    .wh#{$dimension} {
+      width: #{$dimension}#{'%'};
+      height: #{$dimension}#{'%'};
+    }
+
+    .mnw#{$dimension} {
+      min-width: #{$dimension}#{'%'};
+    }
+
+    .mnh#{$dimension} {
+      min-height: #{$dimension}#{'%'};
+    }
+
+    .mxw#{$dimension} {
+      max-width: #{$dimension}#{'%'};
+    }
+
+    .mxh#{$dimension} {
+      max-height: #{$dimension}#{'%'};
+    }
+
+    .wv#{$dimension} {
+      width: #{$dimension}#{'vw'};
+    }
+
+    .hv#{$dimension} {
+      height: #{$dimension}#{'vh'};
+    }
+  }
+
+  .wAuto {
+    width: auto;
+  }
+
+  .hAuto {
+    height: auto;
+  }
+
+  .mnwAuto {
+    min-width: auto;
+  }
+
+  .mnhAuto {
+    min-height: auto;
+  }
+
+  .mxwAuto {
+    max-width: auto;
+  }
+
+  .mxhAuto {
+    max-height: auto;
+  }
+
+}
