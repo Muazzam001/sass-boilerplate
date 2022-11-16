@@ -1,0 +1,5 @@
+@use "./../Abstract/Variables" as varBase;
+
+@function zIndex($layer) {
+  @return map-get(varBase.$zIndexes, $layer);
+}

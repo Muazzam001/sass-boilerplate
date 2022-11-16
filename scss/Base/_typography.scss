@@ -1,6 +1,5 @@
 @use "sass:math";
-@use "./Variables" as varBase;
-@use "./../Abstract" as varMix;
+@use "./../Abstract" as varBase;
 
 %familyFontSourceSansPro {
   font-family: varBase.$familyFontSourceSansPro;
@@ -16,11 +15,11 @@ body {
     @extend %familyFontSourceSansPro;
   }
 
-  @include varMix.breakpoint(varBase.$bp2xLarge, varBase.$bpMax) {
+  @include varBase.breakpoint(varBase.$bp2xLarge, varBase.$bpMax) {
     font-size: varBase.$sizeFontLarger;
   }
 
-  @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+  @include varBase.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
     font-size: varBase.$sizeFontDefault;
   }
 
@@ -46,7 +45,7 @@ body {
     font-size: varBase.$sizeFont6xLarge;
     line-height: varBase.$sizeFont6xLargest;
 
-    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+    @include varBase.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
       font-size: varBase.$sizeFont5xLarge;
       line-height: varBase.$sizeFont6xLarger;
     }
@@ -58,7 +57,7 @@ body {
     font-size: varBase.$sizeFont4xLarger;
     line-height: varBase.$sizeFont6xLarge;
 
-    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+    @include varBase.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
       font-size: varBase.$sizeFont3xLarge;
       line-height: varBase.$sizeFont5xLarge;
     }
@@ -69,7 +68,7 @@ body {
     font-size: varBase.$sizeFont2xLargest;
     line-height: varBase.$sizeFont4xLarger;
 
-    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+    @include varBase.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
       font-size: varBase.$sizeFont2xLarge;
       line-height: varBase.$sizeFont3xLarge;
     }
@@ -80,7 +79,7 @@ body {
     font-size: varBase.$sizeFontXLarger;
     line-height: varBase.$sizeFont2xLargest;
 
-    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+    @include varBase.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
       font-size: varBase.$sizeFontLargest;
       line-height: varBase.$sizeFont2xLarger;
     }
@@ -91,7 +90,7 @@ body {
     font-size: varBase.$sizeFontLargest;
     line-height: varBase.$sizeFontXLarger;
 
-    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+    @include varBase.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
       font-size: varBase.$sizeFontLarger;
       line-height: varBase.$sizeFontXLarge;
     }
@@ -102,7 +101,7 @@ body {
     font-size: varBase.$sizeFontLarge;
     line-height: varBase.$sizeFont2xLarge;
 
-    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+    @include varBase.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
       font-size: varBase.$sizeFontDefault;
       line-height: varBase.$sizeFontXLarge;
     }
@@ -112,7 +111,7 @@ body {
     font-size: varBase.$sizeFontXLarge;
     line-height: varBase.$sizeFontXLargest;
 
-    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+    @include varBase.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
       font-size: varBase.$sizeFontLargest;
       line-height: varBase.$sizeFontXLarge;
     }
@@ -123,7 +122,7 @@ body {
     font-size: varBase.$sizeFontLargest;
     line-height: varBase.$sizeFontXLarge;
 
-    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+    @include varBase.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
       .text2 {
         font-size: varBase.$sizeFontLarger;
         line-height: varBase.$sizeFontLargest;
@@ -136,7 +135,7 @@ body {
     font-size: varBase.$sizeFontLarge;
     line-height: varBase.$sizeFontXLarge;
 
-    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+    @include varBase.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
       font-size: varBase.$sizeFontDefault;
       line-height: varBase.$sizeFontLargest;
     }
@@ -146,7 +145,7 @@ body {
     font-size: varBase.$sizeFontDefault;
     line-height: varBase.$sizeFontLargest;
 
-    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+    @include varBase.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
       font-size: math.div((varBase.$sizeFontDefault + varBase.$sizeFontSmall), 2);
       line-height: varBase.$sizeFontLarger;
     }
@@ -156,7 +155,7 @@ body {
     font-size: varBase.$sizeFontSmall;
     line-height: varBase.$sizeFontLarger;
 
-    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+    @include varBase.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
       .text5 {
         font-size: varBase.$sizeFontSmaller;
         line-height: varBase.$sizeFontLarge;
@@ -174,14 +173,14 @@ body {
     line-height: varBase.$sizeFontLarger;
     font-weight: varBase.$weightFontExtralight;
 
-    @include varMix.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
+    @include varBase.breakpoint(varBase.$bpMedium, varBase.$bpMax) {
       font-size: varBase.$sizeFontSmaller;
       line-height: varBase.$sizeFontLarge;
     }
   }
 
   .textTruncate {
-    @include varMix.textTruncate;
+    @include varBase.textTruncate;
   }
 
   .wrapText {

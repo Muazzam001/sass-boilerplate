@@ -84,7 +84,7 @@ $cursorRange: (
     "none": none,
 );
 
-$sidesflow: (
+$sidesFlow: (
     '':all,
     'y': block,
     'x': inline,
@@ -94,4 +94,11 @@ $overflowRange: (
     "auto": $customAuto,
     "hidden": $customHidden,
     "unset": $customUnset,
+);
+
+$zIndexes: (
+        'modal': 5000,
+        'dropdown': 4000,
+        'default': 1,
+        'below': -1,
 );

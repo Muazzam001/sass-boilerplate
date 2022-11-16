@@ -1,12 +1,12 @@
 @use "./../Abstract" as varBase;
 
 @include varBase.scrollbar(10,
-  varBase.$colorSecondaryBluePebble,
-  varBase.$colorSecondaryPolkadotGrey,
-  varBase.$radiusBorderSmall,
-  varBase.$radiusBorderSmall,
-  varBase.$colorSecondaryBluePebble,
-  varBase.$colorSecondaryPolkadotGrey);
+        varBase.$colorSecondaryBluePebble,
+        varBase.$colorSecondaryPolkadotGrey,
+        varBase.$radiusBorderSmall,
+        varBase.$radiusBorderSmall,
+        varBase.$colorSecondaryBluePebble,
+        varBase.$colorSecondaryPolkadotGrey);
 
 @include varBase.fullscreen(varBase.$colorSecondaryPolkadotGrey);
 
@@ -67,9 +67,7 @@ body {
             &__#{$borderColorName} {
               border-color: $borderColorValue;
             }
-          }
-
-          @else {
+          } @else {
             &--#{$side}__#{$borderColorName} {
               border-#{$sideName}-color: $borderColorValue;
             }

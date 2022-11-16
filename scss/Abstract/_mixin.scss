@@ -1,4 +1,4 @@
-@use "./../Base/Variables" as varBase;
+@use "./../Abstract/Variables" as varBase;
 
 %zIndex1 {
   z-index: varBase.$customOne;
@@ -77,7 +77,10 @@
       @content;
     }
   }
-
+  @else {
+    @error 'No value found for `#{$bpDimension}`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  }
 }
 
 @mixin maskImage($imgURL) {

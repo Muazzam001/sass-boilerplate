@@ -1,17 +1,16 @@
-@use "./../../Base/Variables" as varBase;
-@use "./../../Abstract" as varMix;
+@use "./../../Abstract" as varBase;
 
 body {
 
   .icon {
-    @include varMix.customicon();
+    @include varBase.customicon();
     background-color: varBase.$colorPrimaryAshGrey;
 
     &--expandable {
       // @include varMix.maskImage(varBase.$defaultImagePath + "expandable.svg");
 
       &_on {
-        @include varMix.rotation(180);
+        @include varBase.rotation(180);
       }
     }
 
